@@ -1,0 +1,23 @@
+[user]
+        email = 
+        name = Henry Tran
+[alias]
+        s = status
+    co = checkout
+    cob = checkout -b
+    del = branch -D
+    br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
+    save = !git add -p && git commit -m 'chore: savepoint'
+    undo = reset HEAD~1 --mixed
+    res = !git reset --hard
+    done = !git push origin HEAD
+    lg = !git log --pretty=format:\"%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]\" --abbrev-commit -30
+    b = !git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'
+    la = "!git config -l | grep alias | cut -c 7-"
+    a = add
+    ap = add -p
+    c = commit --verbose
+    ca = commit -a --verbose
+    cm = commit -m
+    cam = commit -a -m
+    m = commit --amend --verbose
